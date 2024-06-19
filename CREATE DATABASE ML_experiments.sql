@@ -6,8 +6,11 @@ CREATE TABLE Users (
     Email VARCHAR(255) UNIQUE NOT NULL, -- 用户邮箱，唯一且不能为空
     Password VARCHAR(255) NOT NULL, -- 用户密码，不能为空
     User_name VARCHAR(100) NOT NULL, -- 用户名，不能为空
+    
     RegistrationTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP -- 注册时间，默认为当前时间戳，注意这里没有分号
+    Users_Properties ENUM('admin', 'regular') DEFAULT 'regular' NOT NULL;--用户属性，选择管理或者普通用户，默认普通用户
 );
+
 
 
 -- 创建数据集表
