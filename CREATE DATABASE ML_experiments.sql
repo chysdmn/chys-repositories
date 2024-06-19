@@ -1,14 +1,14 @@
-CREATE DATABASE ML_experiments
-USE ML_experiments;
+
+
 -- 创建用户表
 CREATE TABLE Users (
-    User_ID INT PRIMARY KEY, -- 用户ID，主键
+    User_ID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, -- 用户ID，主键
     Email VARCHAR(255) UNIQUE NOT NULL, -- 用户邮箱，唯一且不能为空
     Password VARCHAR(255) NOT NULL, -- 用户密码，不能为空
     User_name VARCHAR(100) NOT NULL, -- 用户名，不能为空
-    RegistrationTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- 注册时间，默认为当前时间戳
-    Users_Properties  VARCHAR(20) NOT NULL CHECK (Properties IN ('regular', 'monster')) -- 用户属性信息，可选（管理员或普通用户）
+    RegistrationTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP -- 注册时间，默认为当前时间戳，注意这里没有分号
 );
+
 
 -- 创建数据集表
 CREATE TABLE Datasets (
